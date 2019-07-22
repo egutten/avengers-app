@@ -1,5 +1,7 @@
 var express = require("express");
 var router = express.Router();
+var request = require("request");
+var unirest = require("unirest");
 var Quote = require("../models/quote");
 var Movie = require("../models/movie");
 var middleware = require("../middleware");

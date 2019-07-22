@@ -311,6 +311,16 @@ i.icon.thumbs.up.outline {
 	}
 }
 
+.ui-widget {
+	margin-top: 2em;
+	font-family: Arial;
+}
+
+#log {
+	height: 200px;
+	width: 300px;
+	overflow: auto;
+}
 
 
 
