@@ -15,13 +15,12 @@ form {
 	margin-bottom: 0px;
 }
 
-datalist {
-	display: block;
+li.select {
+	cursor: pointer;
 }
 
 p, 
 li, 
-datalist,
 .ui.form .field>label,   
 .ui.card>.content>.header:not(.ui), 
 .ui.cards>.card>.content>.header:not(.ui), 
