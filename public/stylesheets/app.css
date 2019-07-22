@@ -19,6 +19,10 @@ li.select {
 	cursor: pointer;
 }
 
+li.select:hover {
+	color: #fc811c;
+}
+
 p, 
 li, 
 .ui.form .field>label,   
