@@ -15,8 +15,13 @@ form {
 	margin-bottom: 0px;
 }
 
+datalist {
+	display: block;
+}
+
 p, 
 li, 
+datalist,
 .ui.form .field>label,   
 .ui.card>.content>.header:not(.ui), 
 .ui.cards>.card>.content>.header:not(.ui), 
@@ -309,17 +314,6 @@ i.icon.thumbs.up.outline {
 	#signed-in-name {
 		display: none;
 	}
-}
-
-.ui-widget {
-	margin-top: 2em;
-	font-family: Arial;
-}
-
-#log {
-	height: 200px;
-	width: 300px;
-	overflow: auto;
 }
 
 

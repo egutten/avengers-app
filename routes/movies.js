@@ -36,7 +36,7 @@ router.get("/", function(req, res){
 });
 
 // New
-router.get("/new", middleware.isLoggedIn, function(req, res){
+router.get("/new", function(req, res){
 	res.render("movies/new");
 });
 

@@ -32,19 +32,22 @@ $(function() {
 
 $(document).ready(function(){
 	$("#title").keyup(function(){
+		$("#results").empty();
 		var that = this;
 		var value = $(this).val();
         $.ajax({
           url: 'https://movie-database-imdb-alternative.p.rapidapi.com/?page=1&r=json&s=' + value,
           type: 'GET',
           dataType: 'json',
-		  minLength: 4,
           beforeSend: setHeader,
 		  error: function() { alert('boo!'); },
           success: function(msg) { 
 			 if(value==$(that).val() && msg["Error"] == undefined) {
 				 msg["Search"].forEach (function(e){
-					 console.log(e["Title"]);
+					 var option = document.createElement("option");
+					 option.innerHTML = e["Title"];
+					 $("#results").append(option);
+					 $("#results").trigger("chosen:updated");
 				});
 			 }
 		  },
