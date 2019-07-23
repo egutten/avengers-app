@@ -45,10 +45,13 @@ router.post("/", middleware.isLoggedIn, function(req, res){
 	req.body.movie.image = req.sanitize(req.body.movie.image);
 	Movie.create(req.body.movie, function(err, newMovie){
 		if(err){
-			console.log(err);
-			req.flash("error", "Something went wrong...");
-			res.render("movies/new");
-		} else {
+			if(err.code == 11000){
+				req.flash("error", "Someone has already posted that movie!");
+			} else {
+				req.flash("error", "Something went wrong...");
+			}
+			return res.redirect("back");
+		} else {	  
 			newMovie.author.id = req.user._id;
 			newMovie.author.username = req.user.username;
 			newMovie.save();

@@ -15,6 +15,14 @@ form {
 	margin-bottom: 0px;
 }
 
+li.select {
+	cursor: pointer;
+}
+
+li.select:hover {
+	color: #fc811c;
+}
+
 p, 
 li, 
 .ui.form .field>label,   
@@ -310,7 +318,6 @@ i.icon.thumbs.up.outline {
 		display: none;
 	}
 }
-
 
 
 
