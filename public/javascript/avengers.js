@@ -32,11 +32,7 @@ $(document).ready(function(){
 			 $("#results").show();
 			 if(value==$(that).val() && msg["Error"] == undefined) {
 				 msg["Search"].forEach (function(e){
-					 var option = document.createElement("li");
-					 option.innerHTML = e["Title"];
-					 option.classList.add("select");
-					 $("#results").append(option);
-					 $("#results").trigger("chosen:updated");
+					 renderResults(e["Title"]);
 				});
 			 }
 		  },
@@ -53,3 +49,11 @@ function setHeader(xhr) {
         xhr.setRequestHeader('X-RapidAPI-Host', 'movie-database-imdb-alternative.p.rapidapi.com');
         xhr.setRequestHeader('X-RapidAPI-Key', '744649b923msh40807d2067eaedcp1232b1jsn3a6f0d89e715');
      }
+
+function renderResults(title){
+	 var option = document.createElement("li");
+	 option.innerHTML = title;
+	 option.classList.add("select");
+	 $("#results").append(option);
+	 $("#results").trigger("chosen:updated");
+}
