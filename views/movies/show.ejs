@@ -41,8 +41,8 @@
 			<% } %>
 			<% movie.quotes.forEach(function(quote){ %>
 			<li>
-				<div id="quote-info">
-					<div id="quote">
+				<div class="quote-info">
+					<div class="quote">
 						<i class="fas fa-star"></i>
 						"<%- quote.text %>" - <%- quote.character %>
 					</div>  
@@ -51,7 +51,7 @@
 						   href="/movies/<%= movie.slug %>/quotes/<%= quote._id %>/edit">
 						   Edit
 						</a>
-						<button class="delete-quote ui inverted red button" type="button">
+						<button class="delete-quote ui inverted red button" type="button" quoteId="<%= quote._id %>" movieSlug="<%= movie.slug %>">
 							Delete
 						</button>
 					<% } %>
@@ -91,7 +91,7 @@
 						</div>
 					</form>
 				</div>
-				<p id="quote-user">
+				<p class="quote-user">
 					<em><%= quote.author.username %>, <%= moment(quote.createdAt).fromNow() %></em>
 				</p>
 			</li>
@@ -120,13 +120,11 @@
 		Do you really want to delete this quote!?
 	</p>
 	<div class="yes-no">
-		<% movie.quotes.forEach(function(quote){ %>
-		<form action="/movies/<%= movie.slug %>/quotes/<%= quote._id %>?_method=DELETE" method="POST">	
+		<form action="" method="POST">	
 			<button class="ui inverted red button">
 				Yes
 			</button>
 		</form>
-		<% }) %>
 		<button class="ok ui inverted green button">
 			No
 		</button>

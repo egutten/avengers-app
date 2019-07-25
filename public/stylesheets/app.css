@@ -232,9 +232,18 @@ i.icon.thumbs.up.outline {
 	justify-content: center;
 }
 
-#quote-info, 
+.quote {
+	width: 100px;
+}
+
+.quote-user {
+	font-size: 18px;
+	color: #b0aeac;
+}
+ 
 #sub-show-picture,
 #admin-checkbox,
+.quote-info,
 .yes-no,
 .search {
 	display: flex;
@@ -274,18 +283,9 @@ i.icon.thumbs.up.outline {
 	height: 30px;
 }
 
-#quote, 
-#submitted-by {
+#submitted-by,
+.quote {
 	flex-grow: 2;
-}
-
-#quote-user {
-	font-size: 18px;
-	color: #b0aeac;
-}
-
-#quote {
-	width: 100px;
 }
 
 #user-card {
