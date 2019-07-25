@@ -10,7 +10,7 @@ function modal(obj, modalVersion){
 $(document).ready(modal(".delete-profile", ".delete-profile-modal, .modal-background"));
 $(document).ready(modal(".delete-movie", ".delete-movie-modal, .modal-background"));
 
-// Delete modal for quotes
+// Modal for delete quotes and revoke admin
 $(document).ready(function(){
 	$(".delete-quote").on("click", function() {
 		var quoteId = $(this).attr("quoteId");
@@ -19,11 +19,7 @@ $(document).ready(function(){
 		$('.delete-quote-modal form').attr("action", url);
 		$(".delete-quote-modal, .modal-background").show();    
 	});
-});
-
-// Modal for revoking admin privileges
-$(document).ready(function() {
-    $('#revoke-admin').change(function() {
+	$('#revoke-admin').change(function() {
         if($(this).is(":checked")) {
           $(".admin-modal, .modal-background").show();
         }       
