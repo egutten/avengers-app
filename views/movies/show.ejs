@@ -18,11 +18,9 @@
 			  <a href="/movies/<%= movie.slug %>/edit" class="ui green button">
 				  Edit
 			  </a>
-			  <form action="/movies/<%= movie.slug %>?_method=DELETE" method="POST">
-				<button class="ui red button">
-					Delete
-				</button>
-			  </form>
+			  <button class="delete-movie ui red button" type="button">
+				  Delete
+			  </button>
 			<% } %>
 			 <a class="ui blue button" href="/movies/<%= movie.slug %>/quotes/new">
 				 Add New Quote
@@ -53,11 +51,9 @@
 						   href="/movies/<%= movie.slug %>/quotes/<%= quote._id %>/edit">
 						   Edit
 						</a>
-						<form action="/movies/<%= movie.slug %>/quotes/<%= quote._id %>?_method=DELETE" method="POST">
-							<button class="ui inverted red button">
-								Delete
-							</button>
-						</form>
+						<button class="delete-quote ui inverted red button" type="button">
+							Delete
+						</button>
 					<% } %>
 					<form action="/movies/<%= movie.slug %>/quotes/<%= quote._id %>/like" method="POST">
 						<div class="like-button-group">
@@ -104,5 +100,40 @@
 		</div>
 	</div>
 </div>
+<div class="modal delete-movie-modal modal-content">
+	<p>
+		Do you really want to delete this movie!?
+	</p>
+	<div class="yes-no">
+		<form action="/movies/<%= movie.slug %>?_method=DELETE" method="POST">
+			<button class="ui inverted red button">
+				Yes
+			</button>
+		</form>
+		<button class="ok ui inverted green button">
+			No
+		</button>
+	</div>
+</div>
+<div class="modal delete-quote-modal modal-content">
+	<p>
+		Do you really want to delete this quote!?
+	</p>
+	<div class="yes-no">
+		<% movie.quotes.forEach(function(quote){ %>
+		<form action="/movies/<%= movie.slug %>/quotes/<%= quote._id %>?_method=DELETE" method="POST">	
+			<button class="ui inverted red button">
+				Yes
+			</button>
+		</form>
+		<% }) %>
+		<button class="ok ui inverted green button">
+			No
+		</button>
+	</div>
+</div>
+<div class="modal-background">
+</div>
+
 
 <% include ../partials/footer %>

@@ -1,13 +1,25 @@
+function modal(obj, modalVersion){
+    return function(){
+		$(obj).on("click", function() {
+			$(modalVersion).show();    
+		});
+	};   
+}
+
+$(document).ready(modal(".delete-profile", ".delete-profile-modal, .modal-background"));
+$(document).ready(modal(".delete-quote", ".delete-quote-modal, .modal-background"));
+$(document).ready(modal(".delete-movie", ".delete-movie-modal, .modal-background"));
+
 $(document).ready(function() {
     $('#revoke-admin').change(function() {
         if($(this).is(":checked")) {
-          $(".modal").show();
+          $(".admin-modal, .modal-background").show();
         }       
     });
 });
 
 $(".ok, .modal-background").on("click", function(){
-  $(".modal").hide();
+  $(".modal, .modal-background").hide();
 });
 
 $(function() {

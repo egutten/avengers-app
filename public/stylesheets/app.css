@@ -228,8 +228,14 @@ i.icon.thumbs.up.outline {
 	z-index: 2;
 }
 
+.yes-no {
+	justify-content: center;
+}
+
 #quote-info, 
-#sub-show-picture, 
+#sub-show-picture,
+#admin-checkbox,
+.yes-no,
 .search {
 	display: flex;
 	align-items: center;
@@ -300,11 +306,6 @@ i.icon.thumbs.up.outline {
 	margin: 30px 0px;
 }
 
-#admin-checkbox, #edit-form{
-	display: flex;
-	align-items: center;
-}
-
 #footer-box {
 	width: 100%;
 	height: 50px;
@@ -318,6 +319,7 @@ i.icon.thumbs.up.outline {
 		display: none;
 	}
 }
+
 
 
 
