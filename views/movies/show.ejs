@@ -18,11 +18,9 @@
 			  <a href="/movies/<%= movie.slug %>/edit" class="ui green button">
 				  Edit
 			  </a>
-			  <form action="/movies/<%= movie.slug %>?_method=DELETE" method="POST">
-				<button class="ui red button">
-					Delete
-				</button>
-			  </form>
+			  <button class="delete-movie ui red button" type="button">
+				  Delete
+			  </button>
 			<% } %>
 			 <a class="ui blue button" href="/movies/<%= movie.slug %>/quotes/new">
 				 Add New Quote
@@ -43,8 +41,8 @@
 			<% } %>
 			<% movie.quotes.forEach(function(quote){ %>
 			<li>
-				<div id="quote-info">
-					<div id="quote">
+				<div class="quote-info">
+					<div class="quote">
 						<i class="fas fa-star"></i>
 						"<%- quote.text %>" - <%- quote.character %>
 					</div>  
@@ -53,11 +51,9 @@
 						   href="/movies/<%= movie.slug %>/quotes/<%= quote._id %>/edit">
 						   Edit
 						</a>
-						<form action="/movies/<%= movie.slug %>/quotes/<%= quote._id %>?_method=DELETE" method="POST">
-							<button class="ui inverted red button">
-								Delete
-							</button>
-						</form>
+						<button class="delete-quote ui inverted red button" type="button" quoteId="<%= quote._id %>" movieSlug="<%= movie.slug %>">
+							Delete
+						</button>
 					<% } %>
 					<form action="/movies/<%= movie.slug %>/quotes/<%= quote._id %>/like" method="POST">
 						<div class="like-button-group">
@@ -95,7 +91,7 @@
 						</div>
 					</form>
 				</div>
-				<p id="quote-user">
+				<p class="quote-user">
 					<em><%= quote.author.username %>, <%= moment(quote.createdAt).fromNow() %></em>
 				</p>
 			</li>
@@ -104,5 +100,38 @@
 		</div>
 	</div>
 </div>
+<div class="modal delete-movie-modal modal-content">
+	<p>
+		Do you really want to delete this movie!?
+	</p>
+	<div class="yes-no">
+		<form action="/movies/<%= movie.slug %>?_method=DELETE" method="POST">
+			<button class="ui inverted red button">
+				Yes
+			</button>
+		</form>
+		<button class="ok ui inverted green button">
+			No
+		</button>
+	</div>
+</div>
+<div class="modal delete-quote-modal modal-content">
+	<p>
+		Do you really want to delete this quote!?
+	</p>
+	<div class="yes-no">
+		<form action="" method="POST">	
+			<button class="ui inverted red button">
+				Yes
+			</button>
+		</form>
+		<button class="ok ui inverted green button">
+			No
+		</button>
+	</div>
+</div>
+<div class="modal-background">
+</div>
+
 
 <% include ../partials/footer %>

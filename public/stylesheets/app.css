@@ -228,8 +228,23 @@ i.icon.thumbs.up.outline {
 	z-index: 2;
 }
 
-#quote-info, 
-#sub-show-picture, 
+.yes-no {
+	justify-content: center;
+}
+
+.quote {
+	width: 100px;
+}
+
+.quote-user {
+	font-size: 18px;
+	color: #b0aeac;
+}
+ 
+#sub-show-picture,
+#admin-checkbox,
+.quote-info,
+.yes-no,
 .search {
 	display: flex;
 	align-items: center;
@@ -268,18 +283,9 @@ i.icon.thumbs.up.outline {
 	height: 30px;
 }
 
-#quote, 
-#submitted-by {
+#submitted-by,
+.quote {
 	flex-grow: 2;
-}
-
-#quote-user {
-	font-size: 18px;
-	color: #b0aeac;
-}
-
-#quote {
-	width: 100px;
 }
 
 #user-card {
@@ -300,11 +306,6 @@ i.icon.thumbs.up.outline {
 	margin: 30px 0px;
 }
 
-#admin-checkbox, #edit-form{
-	display: flex;
-	align-items: center;
-}
-
 #footer-box {
 	width: 100%;
 	height: 50px;
@@ -318,6 +319,7 @@ i.icon.thumbs.up.outline {
 		display: none;
 	}
 }
+
 
 
 
